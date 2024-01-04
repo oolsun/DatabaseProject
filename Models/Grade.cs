@@ -155,7 +155,7 @@ public partial class Grade
         }
         // Choose what grade to upgrade.
         Console.WriteLine("\nVälj betygs-ID");
-        int chooseTeacher = Convert.ToInt32(Console.ReadLine());
+        int chooseGradeID = Convert.ToInt32(Console.ReadLine());
         // Set new grade
         int setGrade;
         while (true)
@@ -174,7 +174,7 @@ public partial class Grade
         // Use user inputs to update grades.
         var updateGrade = context.Grades
             .Where(g => g.FkstudentId == chooseStudent)
-            .Where(g => g.FkemployeeId == chooseTeacher)
+            .Where(g => g.GradeId == chooseGradeID)
             .FirstOrDefault();
         if (updateGrade != null)
         {
